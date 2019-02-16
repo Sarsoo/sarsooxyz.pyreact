@@ -5,7 +5,14 @@ body {
 h1 {
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 10vw;
+	font-size: 14vw;
+	text-shadow: 3px 3px 3px #aaa;
+}
+
+h3 {
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 4vw;
 	text-shadow: 3px 3px 3px #aaa;
 }
 
@@ -15,4 +22,21 @@ a {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 2vw;
 	text-shadow: 2px 2px 2px #aaa;
+}
+
+p {
+
+        color: white;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 4vw;
+        text-shadow: 2px 2px 2px #aaa;
+}
+
+
+.header {
+	background-color: #58518e;
+	padding: 25px;
+	
+	text-align: center;
+	margin: auto; 
 }
