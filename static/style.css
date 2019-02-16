@@ -20,7 +20,7 @@ a {
 
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 2vw;
+	font-size: 20px;
 	text-shadow: 2px 2px 2px #aaa;
 }
 
@@ -35,8 +35,37 @@ p {
 
 .header {
 	background-color: #58518e;
-	padding: 25px;
-	
+	padding: 0px;
+	width: 60vw;
+	height: 18vw;
 	text-align: center;
 	margin: auto; 
+}
+
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+.navbar li {
+	float: left;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+.navbar a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar a:hover {
+	background-color: #111;
+}
 }
