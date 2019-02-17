@@ -11,14 +11,12 @@ body {
 }
 
 a {
-
 	color: white;
 	font-size: 20px;
 	/*text-shadow: 1px 1px 1px #aaa;*/
 }
 
 p {
-
         color: white;
         font-size: 20px;
 	padding: 10px;
@@ -33,6 +31,28 @@ p {
 div.gallerystrip {
 	width: 100%;
 	margin: auto;
+	margin-top: 15px;
+	box-shadow: 7px 7px 8px #000000;
+}
+
+div.profile {
+	background-color: #041617;
+	height: auto;
+	margin-top: 10px;
+	border: 8px solid #1a2324;
+	border-radius: 6px;
+	box-shadow: 7px 7px 8px #000000;
+}
+
+div.profile img {
+	border-radius: 50%;
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	border: 8px solid #404c4d;
+	box-shadow: 2px 6px 2px #888888;
 }
 
 h1.title {
@@ -46,7 +66,9 @@ h1.title {
 	width: 45vw;
 	height: 18vw;
 	text-align: center;
-	margin: auto; 
+	margin: auto;
+	box-shadow: 4px 4px 8px #000000;
+
 }
 
 ul.navbar {
@@ -74,7 +96,7 @@ ul.navbar li a {
 	padding: 14px 16px;
 	text-decoration: none;
 	-webkit-transition: background-color 0.4s;
-url_for('static', filename='style.css')  	transition: background-color 0.4s;
+  	transition: background-color 0.4s;
 }
 
 ul.navbar a:hover {
@@ -83,7 +105,7 @@ ul.navbar a:hover {
 
 ul.navbar li.right {float: right;}
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
   ul.navbar li.right,
   ul.navbar li {float: none;}
 }
