@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>sarsoo/{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans:600" rel="stylesheet">
+</head>
+<body>
+	<div>
+	<h1 class="title">andy</h1>
+	</div>
+	<br><br>
+	<ul class="navbar">
+		<li><a href="/">home</a></li>
+		<li class="right"><a href="https://www.instagram.com/pack_it_in_/">art ig</a></li>
+		<li class="right"><a href="https://www.last.fm/user/sarsoo">last.fm</a></li>
+		<li class="right"><a href="https://github.com/sarsoo">github</a></li>
+	</ul>
+	
+	{% block content %}{% endblock %}
+</body>
+</html>
