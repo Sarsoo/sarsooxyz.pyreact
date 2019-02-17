@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}art{% endblock %}
+
+{% block content %}	
+	
+	<div class="row">
+		<h1 class="sectiontitle">portraits</h1>	
+	</div>
+	<div class="row">
+		<div class="card col-pad-4">
+			<img src="{{ url_for('static', filename='art/freddie.jpg') }}" alt="freddie gibbs" class="col-pad-4">
+			<p><b>freddie gibbs / piñata</b></p>
+		</div>
+		<div class="card col-pad-4">
+			<img src="{{ url_for('static', filename='art/self.jpg') }}" alt="me" class="col-pad-4">
+			<p><b>self portrait</b></p>
+		</div>
+		<div class="card col-pad-4">
+			<img src="{{ url_for('static', filename='art/horse.jpg') }}" alt="temptation of saint anthony" class="col-pad-4">
+			<p><b>the temptation of saint anthony / salvador dalí</b></p>
+		</div>
+	</div>
+{% endblock %}
