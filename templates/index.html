@@ -11,14 +11,14 @@
 			<p>proficient in C, Java, Python</p>
 		</div>
 		<div class="col-3 profile">
-			<img src="{{ url_for('static', filename='me.JPG') }}" height=150>
+			<img src="{{ staticroot }}me.jpg" height=150>
 			<p style="text-align: center">sarsoo</p>
 		</div>
 	</div>
 
 	<div class="gallerystrip row">
-		<img src="{{ url_for('static', filename='art/freddie.jpg') }}" alt="freddie gibbs" class="col-pad-4">
-		<img src="{{ url_for('static', filename='art/self.jpg') }}" alt="me" class="col-pad-4">
-		<img src="{{ url_for('static', filename='art/horse.jpg') }}" alt="tempation of saint anthony" class="col-pad-4">
+		<img src="{{ staticroot }}art/freddie.jpg" alt="freddie gibbs" class="col-pad-4">
+		<img src="{{ staticroot }}art/self.jpg" alt="me" class="col-pad-4">
+		<img src="{{ staticroot }}art/horse.jpg" alt="tempation of saint anthony" class="col-pad-4">
 	</div>
 {% endblock %}

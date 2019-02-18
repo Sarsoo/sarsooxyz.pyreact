@@ -10,7 +10,7 @@ staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return render_template('index.html', staticroot = staticbucketurl)
 
 @app.route('/music')
 def music():
