@@ -1,59 +1,17 @@
 {% extends 'base.html' %}
 
+
 {% block title %}art{% endblock %}
 
 {% block content %}	
-	
-	<div class="row">
-		<h1 class="sectiontitle">portraits</h1>	
-	</div>
-	<div class="row">
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/freddie.jpg') }}" alt="freddie gibbs" class="col-pad-4">
-			<p><b>freddie gibbs / piñata</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/self.jpg') }}" alt="me" class="col-pad-4">
-			<p><b>self portrait</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/tyler.jpg') }}" alt="tyler, the creator" class="col-pad-4">
-			<p><b>tyler, the creator</b></p>
-		</div>
-	</div>
-	<div class="row">
-		<h1 class="sectiontitle">animals</h1>	
-	</div>
-	<div class="row">
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/gorilla.jpg') }}" alt="gorilla" class="col-pad-4">
-			<p><b>gorilla</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/zu.jpg') }}" alt="zuma" class="col-pad-4">
-			<p><b>zuma</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/horse.jpg') }}" alt="temptation of saint anthony" class="col-pad-4">
-			<p><b>the temptation of saint anthony / salvador dalí</b></p>
-		</div>
-	</div>
-	<div class="row">
-		<h1 class="sectiontitle">life drawing</h1>	
-	</div>
-	<div class="row">
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/brownstilllife.jpg') }}" alt="brown" class="col-pad-4">
-			<p><b>white and brown</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/outlinestilllife.jpg') }}" alt="outline" class="col-pad-4">
-			<p><b>minimal outline</b></p>
-		</div>
-		<div class="card col-pad-4">
-			<img src="{{ url_for('static', filename='art/redandbluestilllife.jpg') }}" alt="red and blue" class="col-pad-4">
-			<p><b>red and blue</b></p>
-		</div>
-	</div>
 
+	{% for image in images %}	
+	{% if loop.index0 % 3 == 0 %}<div class="row">{% endif %}
+		<div class="card col-pad-4">
+			<img src="{{ staticroot }}art/{{ image.file_name }}.jpg" alt="{{ image.file_name  }}" class="col-pad-4">
+			<p><b>{{ image.description  }}</b></p>
+		</div>
+	{% if loop.index % 3 == 0 or loop.last %}</div>{% endif %}
+
+	{% endfor %}
 {% endblock %}
