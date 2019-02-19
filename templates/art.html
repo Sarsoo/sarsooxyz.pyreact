@@ -4,14 +4,21 @@
 {% block title %}art{% endblock %}
 
 {% block content %}	
-
-	{% for image in images %}	
-	{% if loop.index0 % 3 == 0 %}<div class="row">{% endif %}
+	
+{#{% for tag in tags %}#}
+	
+	{% for row in images|batch(3) %}
+	<div class="row">
+		{% for image in row %}	
+	{#{% if loop.index0 % 3 == 0 %}<div class="row">{% endif %}#}
 		<div class="card col-pad-4">
 			<img src="{{ staticroot }}art/{{ image.file_name }}.jpg" alt="{{ image.file_name  }}" class="col-pad-4">
 			<p><b>{{ image.description  }}</b></p>
 		</div>
-	{% if loop.index % 3 == 0 or loop.last %}</div>{% endif %}
-
+	{#{% if loop.index % 3 == 0 or loop.last %}</div>{% endif %}#}
+		{% endfor %}
+	</div>
 	{% endfor %}
+
+{#{% endfor %}#}
 {% endblock %}

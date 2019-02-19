@@ -19,16 +19,29 @@ def music():
 @app.route('/art')
 def art():
     art_collection = db.collection(u'art')
+    #art_tags_collection = db.collection(u'art_tags')    
     
     try:
-        docs = art_collection.get()
+        pics = art_collection.get()
+        #tags = art_tags_collection.get()
     except google.cloud.exceptions.NotFound:
         return 'no such document'
+
+    #categories = []
+    #for tag in tags:
+        #taglist = {
+            #tag.to_dict()['name'] : []
+        #}
+        #print(tag.to_dict())
+        #categories.append(taglist)
     
+    #print(categories)
+
     images = []
-    for doc in docs:
-        image = doc.to_dict()
-        images.append(image)
+    for doc in pics:
+        #image = doc.to_dict()
+        images.append(doc.to_dict())
+        #categories[categories.index(image['tag'])].append(image)
 
     return render_template('art.html', staticroot = staticbucketurl, images=images)
 
