@@ -10,7 +10,20 @@ staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 
 @app.route('/')
 def main():
-    return render_template('index.html', staticroot = staticbucketurl)
+    
+    index_doc = db.collection(u'pages').document(u'index')
+    doc = index_doc.get()
+    index_dict = doc.to_dict()
+    
+    splashtext = index_dict['splash_text']
+
+    art = []
+    for image in index_dict['art']:
+        art.append(image.get().to_dict())
+
+    print(index_dict['art'][0].get().to_dict())
+
+    return render_template('index.html', staticroot = staticbucketurl, splash = splashtext, art=art)
 
 @app.route('/music')
 def music():
@@ -22,7 +35,6 @@ def art():
     art_tags_collection = db.collection(u'art_tags')    
 
     try:
-        #pics = art_collection.get()
         tags = art_tags_collection.get()
     except google.cloud.exceptions.NotFound:
         return 'no such document'
@@ -41,14 +53,6 @@ def art():
 
         #sections.append({tag_dict['name']: image_list})
         sections.append({'images': image_list, 'name': tag_dict['name'], 'description': tag_dict['description'], 'index': tag_dict['index']})
-
-    #print(sections[0])
-
-    images = []
-    for doc in pics:
-        #image = doc.to_dict()
-        images.append(doc.to_dict())
-        #categories[categories.index(image['tag'])].append(image)
 
     return render_template('art.html', staticroot = staticbucketurl, tags=sections)
 
