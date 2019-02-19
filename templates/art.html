@@ -4,10 +4,12 @@
 {% block title %}art{% endblock %}
 
 {% block content %}	
-	
-{#{% for tag in tags %}#}
-	
-	{% for row in images|batch(3) %}
+{% for tag in tags %}
+	<div class="row">
+		<h1 class="sectiontitle">{{ tag.name }}</h1>
+		{% if tag.description %}<p>{{ tag.description }}</p>{% endif %}
+	</div>
+	{% for row in tag.images|batch(3) %}
 	<div class="row">
 		{% for image in row %}	
 	{#{% if loop.index0 % 3 == 0 %}<div class="row">{% endif %}#}
@@ -20,5 +22,5 @@
 	</div>
 	{% endfor %}
 
-{#{% endfor %}#}
+{% endfor %}
 {% endblock %}
