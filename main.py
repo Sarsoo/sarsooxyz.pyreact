@@ -22,7 +22,7 @@ def art():
     art_tags_collection = db.collection(u'art_tags')    
 
     try:
-        pics = art_collection.get()
+        #pics = art_collection.get()
         tags = art_tags_collection.get()
     except google.cloud.exceptions.NotFound:
         return 'no such document'
@@ -42,17 +42,7 @@ def art():
         #sections.append({tag_dict['name']: image_list})
         sections.append({'images': image_list, 'name': tag_dict['name'], 'description': tag_dict['description'], 'index': tag_dict['index']})
 
-    print(sections[0])
-
-    #categories = []
-    #for tag in tags:
-        #taglist = {
-            #tag.to_dict()['name'] : []
-        #}
-        #print(tag.to_dict())
-        #categories.append(taglist)
-    
-    #print(categories)
+    #print(sections[0])
 
     images = []
     for doc in pics:
@@ -60,7 +50,7 @@ def art():
         images.append(doc.to_dict())
         #categories[categories.index(image['tag'])].append(image)
 
-    return render_template('art.html', staticroot = staticbucketurl, images=images, tags=sections)
+    return render_template('art.html', staticroot = staticbucketurl, tags=sections)
 
 @app.route('/dev')
 def dev():
