@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}dev{% endblock %}
+
+{% block content %}
+	{% for row in tags|batch(2) %}
+	<div class="row">
+		{% for tag in row %}
+		<div class="col-pad-6 card">	
+			<h1>{{ tag.name }}</h1>
+			<p>{{ tag.description }}</p>
+			<a href="/{{ urlprefix  }}/{{ tag.doc_name }}" style="width:100%;" class="button">view</a>
+		</div>
+		{% endfor %}
+	</div>
+	{% endfor %}
+{% endblock %}
