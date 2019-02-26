@@ -16,6 +16,9 @@ def getTagDicts():
     dicts = []
     for tag in tags:
         dicts.append(tag.to_dict())
+    
+    for artdict in dicts:
+        artdict['splash'] = artdict['splash'].get().to_dict()
 
     return dicts
 

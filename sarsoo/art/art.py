@@ -14,8 +14,8 @@ art_print = Blueprint('art', __name__, template_folder='templates')
 @art_print.route('/')
 def root():
     tags = getTagDicts()
-    print(tags)
-    return render_template('art/index.html', tags = tags, urlprefix = urlprefix)
+    #print(tags)
+    return render_template('art/index.html', tags = tags, staticroot = staticbucketurl, urlprefix = urlprefix)
 
 @art_print.route('/<tag>')
 def tag_view(tag):

@@ -3,12 +3,14 @@
 {% block title %}dev{% endblock %}
 
 {% block content %}
-	{% for row in tags|batch(2) %}
+	{% for row in tags|batch(4) %}
 	<div class="row">
 		{% for tag in row %}
-		<div class="col-pad-6 card">	
+		<div class="col-pad-3 card">	
 			<h1>{{ tag.name }}</h1>
-			<p>{{ tag.description }}</p>
+			<img src="{{ staticroot }}art/{{ tag.splash.file_name }}.jpg" alt="{{ tag.splash.file_name  }}">
+
+			<p>{{ tag.description }}{{ tag.image }}</p>
 			<a href="/{{ urlprefix  }}/{{ tag.doc_name }}" style="width:100%;" class="button">view</a>
 		</div>
 		{% endfor %}
