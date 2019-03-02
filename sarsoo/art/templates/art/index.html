@@ -9,8 +9,7 @@
 		<div class="col-pad-3 card">	
 			<h1>{{ tag.name }}</h1>
 			<img src="{{ staticroot }}art/{{ tag.splash.file_name }}.jpg" alt="{{ tag.splash.file_name  }}">
-
-			<p>{{ tag.description }}{{ tag.image }}</p>
+			{% if tag.description %}<p>{{ tag.description }}{{ tag.image }}</p>{% endif %}
 			<a href="/{{ urlprefix  }}/{{ tag.doc_name }}" style="width:100%;" class="button">view</a>
 		</div>
 		{% endfor %}

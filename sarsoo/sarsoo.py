@@ -11,7 +11,7 @@ db = firestore.Client()
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), '..', 'static'), template_folder = "templates")
 
 app.register_blueprint(art_print, url_prefix='/art')
-app.register_blueprint(music_print, url_prefix='/musictest')
+app.register_blueprint(music_print, url_prefix='/music')
 
 staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 
@@ -31,10 +31,6 @@ def main():
     print(index_dict['art'][0].get().to_dict())
 
     return render_template('index.html', staticroot = staticbucketurl, splash = splashtext, art=art)
-
-@app.route('/music')
-def music():
-    return render_template('music.html')
 
 @app.route('/dev')
 def dev():

@@ -78,12 +78,15 @@ div.profile img {
 	box-shadow: 2px 6px 2px #888888;
 }
 
-h1.title {
+a.title {
 	color: white;
 	font-size: 14vw;
 	font-family: 'Megrim', arial;
 	text-shadow: 2px 2px 2px #aaa;
 
+	font-weight: bold;
+	display: block;
+	text-decoration: none;
 	background-color: #070c1a;
 	padding: 0px;
 	width: 45vw;
