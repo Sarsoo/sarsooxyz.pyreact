@@ -13,14 +13,12 @@ def getTagDicts():
     except google.cloud.exceptions.NotFound:
         return 'no such document'
 
-    dicts = []
-    for tag in tags:
-        dicts.append(tag.to_dict())
-    
+    dicts = list(map(lambda x: x.to_dict(), tags))
+
     for artdict in dicts:
         artdict['splash'] = artdict['splash'].get().to_dict()
 
-    return dicts
+    return sorted(dicts, key=lambda k: k['index'])
 
 def getPopulatedTagDict(name):
     
@@ -31,7 +29,8 @@ def getPopulatedTagDict(name):
     image_list = []
     for image in tag_dicts['art']:
         image_list.append(image.get().to_dict())
-        tag_dicts['images'] = image_list
+    
+    tag_dicts['images'] = sorted(image_list, key = lambda k: k['date'], reverse = True)
        
     return tag_dicts
 
