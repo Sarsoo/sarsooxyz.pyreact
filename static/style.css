@@ -3,11 +3,11 @@
 }
 
 html {
-	font-family: 'Roboto', arial;
+	font-family: 'Lato', arial;
 }
 
 body {
-	background-color: #111725;
+	background-color: #202124;
 }
 
 a {
@@ -23,7 +23,7 @@ p {
 }
 
 .button {
-	background-color: white;
+	background-color: #505050;
 	color: black;
 	border-radius: 10px;
 	display: inline-block;
@@ -42,15 +42,14 @@ p {
 }
 
 .row {
-	margin-left: auto;
-    	margin-right: auto;
+	margin: 30px;
 }
 
 .gallerystrip img {
 	height: auto;
-	border: 6px solid #484c55;
-	margin: 5px;	
-	box-shadow: 7px 7px 8px #000000;
+	border: 10px solid #313439;
+	margin: 10px;	
+	box-shadow: 4px 4px 7px #070707;
 }
 
 div.gallerystrip {
@@ -60,12 +59,12 @@ div.gallerystrip {
 }
 
 div.profile {
-	background-color: #041617;
+	background-color: #131313;
 	height: auto;
 	margin-top: 10px;
-	border: 8px solid #1a2324;
-	border-radius: 6px;
-	box-shadow: 7px 7px 8px #000000;
+	/*border: 8px solid #313439;*/
+	border-radius: 0px;
+	box-shadow: 7px 7px 8px black;
 }
 
 div.profile img {
@@ -75,23 +74,24 @@ div.profile img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
-	border: 8px solid #404c4d;
-	box-shadow: 2px 6px 2px #888888;
+	border: 8px solid #212121;
+	box-shadow: 4px 4px 3px #0c0c0c;
 }
 
-a.title {
+h1.title {
 	color: white;
-	font-size: 14vw;
+	font-size: 6em;
 	font-family: 'Megrim', arial;
 	text-shadow: 2px 2px 2px #aaa;
 
 	font-weight: bold;
 	display: block;
 	text-decoration: none;
-	background-color: #070c1a;
+	background-color: #131313;
 	padding: 0px;
-	width: 45vw;
-	height: 18vw;
+	/*font-size: 16em;*/
+	width: 3em;
+	height: 1.3em;
 	text-align: center;
 	margin: auto;
 	box-shadow: 4px 4px 8px #000000;
@@ -99,11 +99,12 @@ a.title {
 }
 
 div.card {
-	background-color: grey;
+	/*background-color: grey;*/
+	background-color: #131313;
 	box-shadow: 4px 4px 8px black;
 	padding: 10px;
-	margin: 5px;
-	border-radius: 3px;
+	margin: 10px;
+	/*border-radius: 3px;*/
 }
 
 div.card h1 {
@@ -132,13 +133,12 @@ h1.sectiontitle {
 
 ul.navbar {
 	list-style-type: none;
-	border-radius: 5px 15px;
-	box-shadow: 5px 5px grey;
+	border-radius: 5px 5px;
+	/*box-shadow: 3px 3px 1px grey;*/
 	margin: 10px;
 	padding: 0;
 	overflow: hidden;
-	background-color: #1e2028;
-	
+	background-color: #131313;
 }
 
 ul.navbar li {
@@ -154,12 +154,13 @@ ul.navbar li a {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	text-shadow: 1px 1px 2px black;
 	-webkit-transition: background-color 0.4s;
   	transition: background-color 0.4s;
 }
 
 ul.navbar a:hover {
-	background-color: #00030a;
+	background-color: #080808;
 }
 
 ul.navbar li.right {float: right;}
@@ -204,17 +205,17 @@ footer a {
   .col-12 {width: 100%;}
 
   /* For desktop: */
-  .col-pad-2 {width: calc(16.66% - 10px);}
-  .col-pad-3 {width: calc(25% - 10px);}
-  .col-pad-4 {width: calc(33.33% - 10px);}
+  .col-pad-2 {width: calc(16.66% - 20px);}
+  .col-pad-3 {width: calc(25% - 20px);}
+  .col-pad-4 {width: calc(33.33% - 20px);}
   .col-pad-5 {width: 41.66%;}
-  .col-pad-6 {width: calc(50% - 10px);}
+  .col-pad-6 {width: calc(50% - 20px);}
   .col-pad-7 {width: 58.33%;}
   .col-pad-8 {width: 66.66%;}
   .col-pad-9 {width: 75%;}
   .col-pad-10 {width: 83.33%;}
   .col-pad-11 {width: 91.66%;}
-  .col-pad-12 {width: calc(100% - 10px);}
+  .col-pad-12 {width: calc(100% - 20px);}
 }
 
 .row::after {
