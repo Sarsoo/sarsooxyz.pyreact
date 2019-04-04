@@ -19,7 +19,7 @@
 
 	<div class="gallerystrip row">
 		{% for image in art %}
-		<img src="{{ staticroot }}art/{{ image.file_name  }}.jpg" alt="{{ image.file_name  }}" class="col-pad-4">
+		<img src="{{ staticroot }}art/{{ image.file_name  }}.jpg" alt="{{ image.file_name  }}" class="pad-4">
 		{% endfor %}
 	</div>
 {% endblock %}
