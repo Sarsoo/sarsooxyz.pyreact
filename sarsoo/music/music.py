@@ -1,5 +1,4 @@
-from flask import Blueprint, render_template, abort
-from jinja2 import TemplateNotFound
+from flask import Blueprint, render_template
 import requests
 
 from google.cloud import firestore
@@ -17,15 +16,15 @@ def root():
     fmkey = fs.document('key/fm').get().to_dict()['clientid']
     
     params = {
-            'method':'user.gettopalbums',
-            'user':'sarsoo',
-            'period':'1month',
-            'limit':'6',
-            'api_key':fmkey,
-            'format':'json'
+            'method': 'user.gettopalbums',
+            'user': 'sarsoo',
+            'period': '1month',
+            'limit': '6',
+            'api_key': fmkey,
+            'format': 'json'
             }
 
-    req = requests.get(fm_url, params = params)
+    req = requests.get(fm_url, params=params)
 
     albums = req.json()['topalbums']['album']
     
@@ -33,4 +32,4 @@ def root():
         for image in album['image']:
             image['text'] = image['#text']
 
-    return render_template('music/index.html', albums = albums)
+    return render_template('music/index.html', albums=albums)
