@@ -2,6 +2,10 @@
 
 {% block title %}home{% endblock %}
 
+{% block scripts %}
+
+{% endblock %}
+
 {% block content %}
 	
 	<div class="row">
@@ -9,6 +13,7 @@
 			<p>electronic engineering student / disney intern</p>
 
 			<p>proficient in C, Java, Python</p>
+			<p id="root"></p>
 			{% if splash %}<p>{{ splash }}</p>{% endif %}
 		</div>
 		<div class="col-3 profile">
@@ -22,4 +27,5 @@
 		<img src="{{ staticroot }}art/{{ image.file_name  }}.jpg" alt="{{ image.file_name  }}" class="pad-4">
 		{% endfor %}
 	</div>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
