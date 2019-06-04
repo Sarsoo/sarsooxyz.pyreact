@@ -25,3 +25,7 @@ def tag_view(tag):
 def all():
     sections = getPopulatedTagDicts()
     return render_template('art/all.html', staticroot = staticbucketurl, tags=sections)
+
+
+def getAssetUrl(name):
+    return staticbucketurl + 'art/' + name + '.jpg'

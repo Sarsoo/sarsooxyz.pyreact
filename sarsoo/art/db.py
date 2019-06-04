@@ -1,4 +1,5 @@
 from google.cloud import firestore
+from google.cloud import exceptions
 
 staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 
@@ -11,7 +12,7 @@ def getTagDicts():
 
     try:
         tags = art_tags_collection.get()
-    except google.cloud.exceptions.NotFound:
+    except exceptions.NotFound:
         return 'no such document'
 
     dicts = list(map(lambda x: x.to_dict(), tags))
@@ -32,7 +33,7 @@ def getPopulatedTagDict(name):
     for image in tag_dicts['art']:
         image_list.append(image.get().to_dict())
     
-    tag_dicts['images'] = sorted(image_list, key = lambda k: k['date'], reverse = True)
+    tag_dicts['images'] = sorted(image_list, key=lambda k: k['date'], reverse=True)
        
     return tag_dicts
 
