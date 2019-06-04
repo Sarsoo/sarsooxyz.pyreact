@@ -3,7 +3,6 @@ const webpack = require('webpack');
 
 module.exports = {
 	entry: './src/js/index.js',
-	devtool: 'inline-source-map',
 	module: {
     rules: [
       {
@@ -21,6 +20,6 @@ module.exports = {
     resolve: { extensions: ["*", ".js", ".jsx"] },
 	output: {
 		filename: 'main.js',
-		path: path.resolve(__dirname, 'static/js')
+		path: path.resolve(__dirname, 'build/js')
 	}
 };

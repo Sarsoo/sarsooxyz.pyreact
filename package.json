@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "devbuild": "webpack --mode development --config webpack.config.js"
+    "build": "webpack --config webpack.prod.js",
+    "devbuild": "webpack --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
     "css-loader": "^2.1.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "react": "^16.8.6",
