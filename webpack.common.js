@@ -2,7 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-	entry: './src/js/index.js',
+	entry: {
+	    index: './src/js/index/index.js',
+	    dev: './src/js/dev/dev.js'
+	    },
 	module: {
     rules: [
       {
@@ -19,7 +22,7 @@ module.exports = {
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
 	output: {
-		filename: 'main.js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'build/js')
 	}
 };

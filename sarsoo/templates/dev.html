@@ -3,19 +3,6 @@
 {% block title %}dev{% endblock %}
 
 {% block content %}	
-	<div class="row">
-		<div class="pad-6 card">	
-			<h1>fmframework</h1>
-			<p>a client for last.fm music tracking written in java</p>
-			<p>this project was important for learning how to interact with  REST APIs and implementing knowledge from my java classes at uni</p>
-			<p>using last fm tags to categorise and visualise data</p>
-			<a href="https://github.com/Sarsoo/fmframework" style="width:100%;" class="button">view source</a>
-		</div>
-		<div class="pad-6 card">	
-			<h1>spotframework</h1>
-			<p>tool for exploring and interfacing with the spotify api</p>
-			<p>currently doing backups of playlists</p>
-			<a href="https://github.com/Sarsoo/spotframework" style="width:100%;" class="button">view source</a>
-		</div>
-	</div>
+	<div id="react"></div>
+	<script src="{{ url_for('static', filename='js/dev.bundle.js') }}"></script>
 {% endblock %}

@@ -5,6 +5,7 @@ import os
 from .art import art_print
 from .music import music_print
 from .api import art_api_print
+from .api import dev_api_print
 
 # Project ID is determined by the GCLOUD_PROJECT environment variable
 db = firestore.Client()
@@ -14,6 +15,7 @@ app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), '..'
 app.register_blueprint(art_print, url_prefix='/art')
 app.register_blueprint(music_print, url_prefix='/music')
 app.register_blueprint(art_api_print, url_prefix='/api/art')
+app.register_blueprint(dev_api_print, url_prefix='/api/dev')
 
 staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 
