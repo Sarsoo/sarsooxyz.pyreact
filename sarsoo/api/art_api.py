@@ -1,36 +1,36 @@
 from flask import Blueprint, jsonify, abort
 from sarsoo.art import db
-from sarsoo.art.art import getAssetUrl
+from sarsoo.art.art import get_asset_url
 
 art_api_print = Blueprint('artapi', __name__)
 
 
 @art_api_print.route('/', methods=['GET'])
-def collections():
+def get_all_collections():
 
-    tagdicts = db.getTagDicts()
+    tagdicts = db.pull_all_tags()
 
-    collections = []
+    art_collections = []
 
-    for dict in tagdicts:
-        collections.append({
-            'name': dict['name'],
-            'id': dict['doc_name'],
-            'description': dict['description'],
-            'index': dict['index'],
-            'splash_url': getAssetUrl(dict['splash']['file_name'])
+    for tag_dict in tagdicts:
+        art_collections.append({
+            'name': tag_dict['name'],
+            'id': tag_dict['doc_name'],
+            'description': tag_dict['description'],
+            'index': tag_dict['index'],
+            'splash_url': get_asset_url(tag_dict['splash']['file_name'])
         })
 
-    response = {'collections': collections}
+    response = {'collections': art_collections}
 
     return jsonify(response)
 
 
 @art_api_print.route('/<id>', methods=['GET'])
-def getcollection(id):
+def get_named_collection(art_id):
 
     try:
-        tagdict = db.getPopulatedTagDict(id)
+        tagdict = db.pull_named_tag(art_id)
     except TypeError as e:
         abort(404)
 
@@ -38,7 +38,7 @@ def getcollection(id):
 
     for image in tagdict['images']:
         artlist.append({
-            'file_url': getAssetUrl(image['file_name']),
+            'file_url': get_asset_url(image['file_name']),
             'date': image['date'].strftime('%d %B %y')
         })
 

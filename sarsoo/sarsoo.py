@@ -33,9 +33,7 @@ def main():
     for image in index_dict['art']:
         art.append(image.get().to_dict())
 
-    print(index_dict['art'][0].get().to_dict())
-
-    return render_template('index.html', staticroot = staticbucketurl, splash = splashtext, art=art)
+    return render_template('index.html', staticroot=staticbucketurl, splash=splashtext, art=art)
 
 
 @app.route('/dev')

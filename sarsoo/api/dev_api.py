@@ -7,7 +7,7 @@ dev_api_print = Blueprint('devapi', __name__)
 
 
 @dev_api_print.route('/', methods=['GET'])
-def collections():
+def get_all_collections():
 
     dev_collection = fs.collection(u'dev')
 

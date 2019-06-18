@@ -6,7 +6,7 @@ staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 fs = firestore.Client()
 
 
-def getTagDicts():
+def pull_all_tags():
 
     art_tags_collection = fs.collection(u'art_tags')
 
@@ -23,7 +23,7 @@ def getTagDicts():
     return sorted(dicts, key=lambda k: k['index'])
 
 
-def getPopulatedTagDict(name):
+def pull_named_tag(name):
     
     name_doc = fs.document(u'art_tags/{}'.format(name))
 
@@ -38,9 +38,9 @@ def getPopulatedTagDict(name):
     return tag_dicts
 
 
-def getPopulatedTagDicts():
+def get_populated_tags():
     
-    tag_dicts = getTagDicts()
+    tag_dicts = pull_all_tags()
 
     for tag in tag_dicts:    
         image_list = []
