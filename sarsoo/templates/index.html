@@ -10,10 +10,9 @@
 	
 	<div class="row">
 		<div class="col-9" style="text-align:center">
-			<p>electronic engineering student / disney intern</p>
-
-			<p>proficient in C, Java, Python</p>
-			{% if splash %}<p>{{ splash }}</p>{% endif %}
+			{% for text_entry in main_text %}
+			<p>{{ text_entry }}</p>
+			{% endfor %}
 		</div>
 		<div class="col-3 profile">
 			<img src="{{ staticroot }}me.jpg" height=150>

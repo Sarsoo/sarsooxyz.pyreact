@@ -24,8 +24,8 @@ a {
 }
 
 p {
-        color: $text-colour;
-        font-size: 20px;
+    color: $text-colour;
+    font-size: 20px;
 	padding: 10px;
 }
 
@@ -79,7 +79,7 @@ p {
 }
 
 .profile {
-	background-color: #131313;
+	background-color: $ui-colour;
 	height: auto;
 	margin-top: 10px;
 	/*border: 8px solid #313439;*/
@@ -100,22 +100,22 @@ p {
 }
 
 h1.title {
-	color: white;
+	color: black;
 	font-size: 6em;
-	font-family: 'Megrim', arial;
-	text-shadow: 2px 2px 2px #aaa;
+	font-family: 'Pirata One', arial;
+	text-shadow: 3px 3px 3px #aaa;
 
 	font-weight: bold;
 	display: block;
 	text-decoration: none;
-	background-color: #131313;
+	background-color: white;
 	padding: 0px;
 	/*font-size: 16em;*/
-	width: 3em;
+	width: 2.5em;
 	height: 1.3em;
 	text-align: center;
 	margin: auto;
-	box-shadow: 4px 4px 8px #000000;
+	box-shadow: 5px 5px 8px #000000;
 
 }
 

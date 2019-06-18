@@ -23,24 +23,20 @@ staticbucketurl = 'https://storage.googleapis.com/sarsooxyzstatic/'
 @app.route('/')
 def main():
     
-    index_doc = db.collection(u'pages').document(u'index')
-    doc = index_doc.get()
-    index_dict = doc.to_dict()
+    index_query = db.collection(u'pages').document(u'index')
+    index_dict = index_query.get().to_dict()
     
-    splashtext = index_dict['splash_text']
+    main_text = index_dict['main_text']
 
     art = []
     for image in index_dict['art']:
         art.append(image.get().to_dict())
 
-    return render_template('index.html', staticroot=staticbucketurl, splash=splashtext, art=art)
+    return render_template('index.html', staticroot=staticbucketurl, art=art, main_text=main_text)
 
 
 @app.route('/dev')
 def dev():
     return render_template('dev.html')
 
-
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
 # [END gae_python37_app]
