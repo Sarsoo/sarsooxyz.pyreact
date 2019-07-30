@@ -106,6 +106,12 @@ h1.title {
 	font-family: 'Pirata One', arial;
 	text-shadow: 3px 3px 3px #aaa;
 
+	cursor: default;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+
 	font-weight: bold;
 	display: block;
 	text-decoration: none;
