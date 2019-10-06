@@ -1,0 +1,6 @@
+
+cron:
+- description: "playlist executions job"
+  url: /api/playlist/run/users/cron
+  schedule: every 8 hours
+  target: spotify
