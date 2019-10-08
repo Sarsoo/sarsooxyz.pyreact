@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template
-import requests
-
+from fmframework.net.network import Network
 from google.cloud import firestore
 
 fs = firestore.Client()
@@ -14,22 +13,7 @@ music_print = Blueprint('music', __name__, template_folder='templates')
 @music_print.route('/')
 def root():
     fmkey = fs.document('key/fm').get().to_dict()['clientid']
-    
-    params = {
-            'method': 'user.gettopalbums',
-            'user': 'sarsoo',
-            'period': '1month',
-            'limit': '6',
-            'api_key': fmkey,
-            'format': 'json'
-            }
-
-    req = requests.get(fm_url, params=params)
-
-    albums = req.json()['topalbums']['album']
-    
-    for album in albums:
-        for image in album['image']:
-            image['text'] = image['#text']
+    fmnet = Network(username='sarsoo', api_key=fmkey)
+    albums = fmnet.get_top_albums(Network.Range.MONTH, limit=6)
 
     return render_template('music/index.html', albums=albums)

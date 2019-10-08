@@ -9,9 +9,9 @@
 	<div class="row">
 		{% for album in albums %}
 			<div class = "pad-2 card">
-				<img src="{{album.image[3].text}}">
+				<img src="{{album.images[-1].link}}">
 				<p style="text-align:center">{{ album.name }}<br>{{ album.artist.name -}}</p>
-				<p style="text-align:center">{{- album.playcount }} plays</p>
+				<p style="text-align:center">{{- album.play_count }} plays</p>
 			</div>
 		{% endfor %}
 	</div>
