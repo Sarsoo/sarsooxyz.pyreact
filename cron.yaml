@@ -4,3 +4,7 @@ cron:
   url: /api/playlist/run/users/cron
   schedule: every 8 hours
   target: spotify
+- description: "playlist stats refresh"
+  url: /api/spotfm/playlist/refresh/users/cron
+  schedule: every 72 hours
+  target: spotify
