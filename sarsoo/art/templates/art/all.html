@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 
-{% block title %}art{% endblock %}
+{% block title %}/art{% endblock %}
 
 {% block content %}	
 {% for tag in tags %}
-	<div class="row">
+	<div class="row text-no-select">
 		<h1 class="sectiontitle">{{ tag.name }}</h1>
 		{% if tag.description %}<p>{{ tag.description }}</p>{% endif %}
 	</div>
 	{% for row in tag.images|batch(3) %}
-	<div class="row">
+	<div class="row text-no-select">
 		{% for image in row %}	
 	{#{% if loop.index0 % 3 == 0 %}<div class="row">{% endif %}#}
 		<div class="card pad-4">

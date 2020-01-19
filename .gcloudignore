@@ -20,4 +20,5 @@ __pycache__/
 /setup.cfg
 
 env
+venv
 node_modules/

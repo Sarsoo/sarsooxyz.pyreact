@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}home{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
 	
-	<div class="row">
+	<div class="row text-no-select">
 		<div class="col-9" style="text-align:center">
 			{% for text_entry in main_text %}
 			<p>{{ text_entry }}</p>
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	<div class="gallerystrip row">
+	<div class="gallerystrip row text-no-select">
 		{% for image in art %}
 		<img src="{{ staticroot }}art/{{ image.file_name  }}.jpg" alt="{{ image.file_name  }}" class="pad-4">
 		{% endfor %}

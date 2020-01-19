@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}/engineering{% endblock %}
+
+{% block content %}	
+	<div id="react"></div>
+	<script src="{{ url_for('static', filename='js/eng.bundle.js') }}"></script>
+{% endblock %}

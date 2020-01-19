@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}music{% endblock %}
+{% block title %}/music{% endblock %}
 
 {% block content %}
-	<div class="row">
+	<div class="row text-no-select">
 		<h1 class = "col-12" style = "text-align: center; color: white;">most played of the last month</h1>
 	</div>
-	<div class="row">
+	<div class="row text-no-select">
 		{% for album in albums %}
 			<div class = "pad-2 card">
 				<img src="{{album.images[-1].link}}">
 				<p style="text-align:center">{{ album.name }}<br>{{ album.artist.name -}}</p>
-				<p style="text-align:center">{{- album.play_count }} plays</p>
+				<p style="text-align:center">{{- album.user_scrobbles }} plays</p>
 			</div>
 		{% endfor %}
 	</div>

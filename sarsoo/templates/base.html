@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-	<title>sarsoo/{% block title %}{% endblock %}</title>
+	<title>sarsoo{% block title %}{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-	<link href="https://fonts.googleapis.com/css?family=Pirata+One|Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pirata+One|Roboto" rel="stylesheet">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/sarsooxyzstatic/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="https://storage.googleapis.com/sarsooxyzstatic/favicon-32x32.png">
@@ -26,10 +26,11 @@
 		<li><a href="/dev">dev</a></li>
 		<li><a href="/art">art</a></li>
 		<li><a href="/music">music</a></li>
-		<li><a href="https://spotify.sarsoo.xyz">playlist manager</a></li>
+		<li><a href="/engineering">engineering</a></li>
 		<li class="right"><a href="https://www.instagram.com/pack_it_in_/">art ig</a></li>
 		<li class="right"><a href="https://www.last.fm/user/sarsoo">last.fm</a></li>
 		<li class="right"><a href="https://github.com/sarsoo">github</a></li>
+		<li class="right"><a href="https://spotify.sarsoo.xyz">playlist manager</a></li>
 	</ul>
 	
 	{% block content %}{% endblock %}

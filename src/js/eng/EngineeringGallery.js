@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 const axios = require('axios');
 
-class DevGallery extends Component {
+class EngineeringGallery extends Component {
 
     constructor(props){
         super(props);
@@ -15,10 +15,10 @@ class DevGallery extends Component {
     getEntries(){
 
         var self = this;
-        axios.get('/api/dev')
+        axios.get('/api/eng')
         .then(function (response){
             self.setState({
-                entries: response.data.dev,
+                entries: response.data.eng,
                 isLoading: false
             });
         })
@@ -36,7 +36,7 @@ class DevGallery extends Component {
         while (a.length > 0)
             arrays.push(a.splice(0, size));
 
-        const gallery = <div>{arrays.map((entry) => <Row entries={entry}/>)}</div>;
+        const gallery = <div>{arrays.map((entry) => <Row entries={entry} />)}</div>;
 
         const loadingMessage = <p className="center-text text-no-select" >loading...</p>;
 
@@ -49,14 +49,14 @@ function Row(props){
 
     return (
         <div className="row text-no-select">
-            {props.entries.map((entry) => <DevEntry entry={entry} key={entry.index} />)}
+            {props.entries.map((entry) => <WorkEntry entry={entry} key={entry.index} />)}
         </div>
 
     );
 
 }
 
-function DevEntry(props){
+function WorkEntry(props){
     return (
 
         <div className="pad-4 card">
@@ -64,10 +64,10 @@ function DevEntry(props){
 
 			{props.entry.description.map((entry) => <p key={entry} >{entry}</p>)}
 
-            <a href={props.entry.url} className="button full-width">view source</a>
+            <a href={props.entry.url} className="button full-width">read</a>
         </div>
 
     );
 }
 
-export default DevGallery;
+export default EngineeringGallery;
