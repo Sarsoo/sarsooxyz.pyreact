@@ -3,6 +3,6 @@ dispatch:
   - url: "sarsoo.xyz/*"
     service: default
 
-  - url: "spotify.sarsoo.xyz/*"
+  - url: "music.sarsoo.xyz/*"
     service: spotify
 
