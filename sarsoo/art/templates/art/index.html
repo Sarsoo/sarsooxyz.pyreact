@@ -10,7 +10,7 @@
 			<h1>{{ tag.name }}</h1>
 			<img src="{{ staticroot }}art/{{ tag.splash.file_name }}.jpg" alt="{{ tag.splash.file_name  }}">
 			{% if tag.description %}<p>{{ tag.description }}{{ tag.image }}</p>{% endif %}
-			<a href="/{{ urlprefix  }}/{{ tag.doc_name }}" style="width:100%;" class="button">view</a>
+			<a href="/{{ urlprefix  }}/{{ tag.doc_name }}" style="width:100%;" class="button">View</a>
 		</div>
 		{% endfor %}
 	</div>

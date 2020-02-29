@@ -39,9 +39,4 @@ def main():
 def dev():
     return render_template('dev.html')
 
-
-@app.route('/engineering')
-def eng():
-    return render_template('eng.html')
-
 # [END gae_python37_app]

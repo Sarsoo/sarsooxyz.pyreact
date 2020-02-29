@@ -38,7 +38,7 @@ class DevGallery extends Component {
 
         const gallery = <div>{arrays.map((entry) => <Row entries={entry}/>)}</div>;
 
-        const loadingMessage = <p className="center-text text-no-select" >loading...</p>;
+        const loadingMessage = <p className="center-text text-no-select" >Loading...</p>;
 
         return this.state.isLoading ? loadingMessage : gallery;
     }
@@ -64,7 +64,7 @@ function DevEntry(props){
 
 			{props.entry.description.map((entry) => <p key={entry} >{entry}</p>)}
 
-            <a href={props.entry.url} className="button full-width">view source</a>
+            <a href={props.entry.url} className="button full-width">View</a>
         </div>
 
     );

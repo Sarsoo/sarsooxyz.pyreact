@@ -17,7 +17,6 @@ if os.environ.get('DEPLOY_DESTINATION', None) == 'PROD':
 
     client = google.cloud.logging.Client()
     handler = CloudLoggingHandler(client, name="sarsooxyz")
-    setup_logging(handler)
 
     handler.setFormatter(formatter)
 
