@@ -8,3 +8,7 @@ cron:
   url: /api/spotfm/playlist/refresh/users/cron
   schedule: every 72 hours
   target: spotify
+- description: "tag refresh"
+  url: /api/tag/update/users/cron
+  schedule: every 24 hours
+  target: spotify
