@@ -12,7 +12,7 @@ music_print = Blueprint('music', __name__, template_folder='templates')
 
 @music_print.route('/')
 def root():
-    fmkey = fs.document('key/fm').get().to_dict()['clientid']
+    fmkey = fs.document('config/music-tools').get().to_dict()['last_fm_client_id']
     fmnet = Network(username='sarsoo', api_key=fmkey)
     albums = fmnet.get_top_albums(Network.Range.MONTH, limit=6)
 
